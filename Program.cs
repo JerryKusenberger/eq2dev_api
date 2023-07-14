@@ -27,6 +27,7 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
