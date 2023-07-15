@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace eq2dev_api;
-[Table("characters")]
+﻿namespace eq2dev_api;
 public partial class Character
 {
     public uint Id { get; set; }
