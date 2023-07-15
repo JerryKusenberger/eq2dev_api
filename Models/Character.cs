@@ -6,7 +6,7 @@ public partial class Character
 {
     public uint Id { get; set; }
 
-    // public uint AccountId { get; set; }
+    public uint AccountId { get; set; }
 
     public uint ServerId { get; set; }
 
