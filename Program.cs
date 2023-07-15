@@ -15,11 +15,11 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("MariaDbConnectionString");
 
-var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
+//var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
 
 builder.Services.AddDbContext<Eq2EmuDbContext>(
     dbContextOptions => dbContextOptions
-        .UseMySql(connectionString, serverVersion)
+        .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
         // The following three options help with debugging, but should
         // be changed or removed for production.
         .LogTo(Console.WriteLine, LogLevel.Information)
