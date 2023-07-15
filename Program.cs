@@ -15,8 +15,6 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("MariaDbConnectionString");
 
-//var serverVersion = new MySqlServerVersion(ServerVersion.AutoDetect(connectionString));
-
 builder.Services.AddDbContext<Eq2EmuDbContext>(
     dbContextOptions => dbContextOptions
         .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
@@ -26,7 +24,6 @@ builder.Services.AddDbContext<Eq2EmuDbContext>(
         .EnableSensitiveDataLogging()
         .EnableDetailedErrors()
 );
-
 
 var app = builder.Build();
 
