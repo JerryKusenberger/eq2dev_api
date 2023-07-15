@@ -8,5 +8,7 @@ namespace eq2dev_api.Data
             : base(options)
         {
         }
+        public DbSet<Character> Characters { get; set; }
+
     }
 }

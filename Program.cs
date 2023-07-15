@@ -1,4 +1,5 @@
 using eq2dev_api.Data;
+using eq2dev_api.Services;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +25,9 @@ builder.Services.AddDbContext<Eq2EmuDbContext>(
         .EnableSensitiveDataLogging()
         .EnableDetailedErrors()
 );
+
+builder.Services.AddTransient<ICharacterService, CharacterService>();
+
 
 var app = builder.Build();
 
