@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eq2dev_api;
-
+[Table("characters")]
 public partial class Character
 {
     public uint Id { get; set; }
