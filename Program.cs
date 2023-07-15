@@ -19,6 +19,7 @@ var connectionString = builder.Configuration.GetConnectionString("MariaDbConnect
 builder.Services.AddDbContext<Eq2EmuDbContext>(
     dbContextOptions => dbContextOptions
         .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+        .UseSnakeCaseNamingConvention()
         // The following three options help with debugging, but should
         // be changed or removed for production.
         .LogTo(Console.WriteLine, LogLevel.Information)
