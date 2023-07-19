@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using eq2dev_api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace eq2dev_api.Data
 {
@@ -8,7 +9,9 @@ namespace eq2dev_api.Data
             : base(options)
         {
         }
+
         public DbSet<Character> Characters { get; set; }
+        public DbSet<FeOnlineChar> FeOnlineChars { get; set; }
 
     }
 }

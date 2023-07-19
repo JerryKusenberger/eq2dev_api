@@ -12,7 +12,6 @@ namespace eq2dev_api.Services
         }
         public async Task<IList<Character>> GetCharacters()
         {
-            FormattableString sql = $"SELECT * FROM eq2emu.characters";
             var characters = await _dbContext.Characters.ToListAsync();
             return characters;
         }

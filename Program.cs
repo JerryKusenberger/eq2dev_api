@@ -28,7 +28,7 @@ builder.Services.AddDbContext<Eq2EmuDbContext>(
 );
 
 builder.Services.AddTransient<ICharacterService, CharacterService>();
-
+builder.Services.AddTransient<IServerStatsService, ServerStatsService>();
 
 var app = builder.Build();
 
