@@ -13,11 +13,18 @@ namespace eq2dev_api.Controllers
             _serverStatsService = serverStatsService;
         }
 
-        [HttpGet()]
+        [HttpGet("stats")]
         public async Task<IActionResult> GetServerStats()
         {
             var stats = await _serverStatsService.GetServerStats();
             return Ok(stats);
+        }
+
+        [HttpGet("onlinePlayers")]
+        public async Task<IActionResult> GetOnlinePlayers()
+        {
+            var chars = await _serverStatsService.GetOnlinePlayers();
+            return Ok(chars);
         }
     }
 }

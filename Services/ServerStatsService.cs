@@ -11,10 +11,15 @@ namespace eq2dev_api.Services
         {
             _dbContext = dbContext;
         }
-        public async Task<IList<FeOnlineChar>> GetServerStats()
+        public async Task<FeServerStats> GetServerStats()
         {
-            var stats = await _dbContext.FeOnlineChars.ToListAsync();
+            var stats = await _dbContext.FeServerStats.FirstOrDefaultAsync();
             return stats;
+        }
+        public async Task<IList<FeOnlineChar>> GetOnlinePlayers()
+        {
+            var chars = await _dbContext.FeOnlineChars.ToListAsync();
+            return chars;
         }
     }
 }

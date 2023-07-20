@@ -4,6 +4,7 @@ namespace eq2dev_api.Services
 {
     public interface IServerStatsService
     {
-        Task<IList<FeOnlineChar>> GetServerStats();
+        Task<FeServerStats> GetServerStats();
+        Task<IList<FeOnlineChar>> GetOnlinePlayers();
     }
 }
